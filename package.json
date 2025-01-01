@@ -13,5 +13,19 @@
   },
   "peerDependencies": {
     "whatwg-url": "7.1.0"
+  },
+  "pluginType": "elizaos:plugin:1.0.0",
+  "pluginParameters": {
+    "type": "object",
+    "required": ["abstractApiKey"],
+    "properties": {
+      "abstractApiKey": {
+        "type": "string",
+        "description": "Abstract Private Key"
+      }
+    }
+  },
+  "pluginEnv": {
+    "ABSTRACT_PRIVATE_KEY": "abstractApiKey"
   }
 }
