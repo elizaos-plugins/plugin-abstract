@@ -17,15 +17,20 @@
   "pluginType": "elizaos:plugin:1.0.0",
   "pluginParameters": {
     "type": "object",
-    "required": ["abstractPrivateKey"],
+    "required": ["abstractAddress", "abstractPrivateKey"],
     "properties": {
+      "abstractAddress": {
+        "type": "string",
+        "description": "Abstract address"
+      },
       "abstractPrivateKey": {
         "type": "string",
-        "description": "Abstract Private Key"
+        "description": "Abstract private key"
       }
     }
   },
   "pluginEnv": {
+    "ABSTRACT_ADDRESS": "abstractAddress",
     "ABSTRACT_PRIVATE_KEY": "abstractPrivateKey"
   }
 }
