@@ -102,13 +102,19 @@ export default {
         return true;
     },
     description: "Transfer tokens from the agent's wallet to another address",
-    handler: async (
+    handler: async ({
+        runtime,
+        message,
+        state,
+        options: _options,
+        callback,
+    }: {
         runtime: IAgentRuntime,
         message: Memory,
         state: State,
-        _options: { [key: string]: unknown },
+        options: { [key: string]: unknown },
         callback?: HandlerCallback
-    ): Promise<boolean> => {
+    }): Promise<boolean> => {
         elizaLogger.log("Starting Abstract SEND_TOKEN handler...");
 
         // Initialize or update state
