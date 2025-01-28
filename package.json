@@ -29,5 +29,22 @@
     },
     "peerDependencies": {
         "whatwg-url": "7.1.0"
+    },
+    "agentConfig": {
+        "pluginType": "elizaos:client:1.0.0",
+        "pluginParameters": {
+            "ABSTRACT_ADDRESS": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^0x[a-fA-F0-9]{40}$",
+                "description": "Abstract address must be a valid address"
+            },
+            "ABSTRACT_PRIVATE_KEY": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^[a-fA-F0-9]{64}$",
+                "description": "Abstract private key must be a 64-character hexadecimal string (32 bytes) without the '0x' prefix"
+            }
+        }
     }
 }
