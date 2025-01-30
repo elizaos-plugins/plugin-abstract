@@ -1,5 +1,5 @@
 {
-    "name": "@elizaos/plugin-abstract",
+    "name": "@elizaos-plugins/plugin-abstract",
     "version": "0.1.8+build.1",
     "type": "module",
     "main": "dist/index.js",
