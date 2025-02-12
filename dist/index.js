@@ -183,6 +183,7 @@ var transferAction = {
   },
   description: "Transfer tokens from the agent's wallet to another address",
   handler: async (runtime, message, state, _options, callback) => {
+    var _a, _b;
     elizaLogger2.log("Starting Abstract SEND_TOKEN handler...");
     let currentState = state;
     if (!currentState) {
@@ -206,11 +207,11 @@ var transferAction = {
       const tokenMemory = await runtime.messageManager.getMemoryById(
         stringToUuid(`${content.tokenSymbol}-${runtime.agentId}`)
       );
-      if (typeof tokenMemory?.content?.tokenAddress === "string") {
+      if (typeof ((_a = tokenMemory == null ? void 0 : tokenMemory.content) == null ? void 0 : _a.tokenAddress) === "string") {
         tokenAddress = tokenMemory.content.tokenAddress;
       }
       if (!tokenAddress) {
-        tokenAddress = getTokenByName(content.tokenSymbol)?.address;
+        tokenAddress = (_b = getTokenByName(content.tokenSymbol)) == null ? void 0 : _b.address;
       }
     }
     const resolvedRecipient = await resolveAddress(content.recipient);
@@ -513,6 +514,7 @@ var getBalanceAction = {
   },
   description: "Check token balance for a given address",
   handler: async (runtime, message, state, _options, callback) => {
+    var _a, _b;
     elizaLogger3.log("Starting Abstract GET_BALANCE handler...");
     let currentState = state;
     if (!currentState) {
@@ -543,11 +545,11 @@ var getBalanceAction = {
         const tokenMemory = await runtime.messageManager.getMemoryById(
           stringToUuid2(`${content.tokenSymbol}-${runtime.agentId}`)
         );
-        if (typeof tokenMemory?.content?.tokenAddress === "string") {
+        if (typeof ((_a = tokenMemory == null ? void 0 : tokenMemory.content) == null ? void 0 : _a.tokenAddress) === "string") {
           tokenAddress = tokenMemory.content.tokenAddress;
         }
         if (!tokenAddress) {
-          tokenAddress = getTokenByName(content.tokenSymbol)?.address;
+          tokenAddress = (_b = getTokenByName(content.tokenSymbol)) == null ? void 0 : _b.address;
         }
       }
       const result = validatedSchema.safeParse({
