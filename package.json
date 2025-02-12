@@ -20,7 +20,6 @@
     ],
     "dependencies": {
         "@abstract-foundation/agw-client": "1.0.1",
-        "@elizaos/core": "workspace:*",
         "tsup": "^8.3.5",
         "viem": "2.22.2"
     },
